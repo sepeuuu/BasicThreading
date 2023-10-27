@@ -36,12 +36,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 81);
+            this.label1.Location = new System.Drawing.Point(147, 84);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(496, 42);
+            this.label1.Size = new System.Drawing.Size(322, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "- BEFORE STARTING THREAD -";
+            this.label1.Text = "- THREAD STARTS  -";
             // 
             // button1
             // 
@@ -49,7 +49,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(239, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 43);
             this.button1.TabIndex = 1;
@@ -65,9 +65,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmBasicThread";
-            this.Text = "Form1";
+            this.Text = "frmTrackThread";
             this.Load += new System.EventHandler(this.FrmBasicThread_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

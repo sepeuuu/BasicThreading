@@ -13,8 +13,11 @@ namespace BasicThreading
 {
     public partial class FrmBasicThread : Form
     {
-        private Thread ThreadA;
-        private Thread ThreadB;
+        private Thread threadA;
+        private Thread threadB;
+        private Thread threadC;
+        private Thread threadD;
+
         public FrmBasicThread()
         {
             InitializeComponent();
@@ -27,20 +30,37 @@ namespace BasicThreading
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ThreadStart start = new ThreadStart(MyThreadClass.Thread1);
+            ThreadStart start1 = new ThreadStart(MyThreadClass.Thread1);
+            ThreadStart start2 = new ThreadStart(MyThreadClass.Thread2);
             Console.WriteLine(label1.Text.ToString());
+
             
-            ThreadA = new Thread(start);
-            ThreadA.Name = "Thread A";
-            ThreadA.Start();
+            threadA = new Thread(start1);
+            threadA.Name = "Thread A";
+            threadA.Priority = ThreadPriority.Highest;
+                  
+            threadB = new Thread(start2);
+            threadB.Name = "Thread B";
+            threadB.Priority = ThreadPriority.Normal;    
+
+            threadC = new Thread(start1);
+            threadC.Name = "Thread C";
+            threadC.Priority = ThreadPriority.AboveNormal;
             
-            ThreadB = new Thread(start);
-            ThreadB.Name = "Thread B";
-            ThreadB.Start();   
-            
-            ThreadA.Join();
-            ThreadB.Join();
-            
+            threadD = new Thread(start2);
+            threadD.Name = "Thread D";
+            threadD.Priority = ThreadPriority.BelowNormal; 
+
+            threadA.Start();
+            threadB.Start();
+            threadC.Start();
+            threadD.Start();
+
+            threadA.Join();
+            threadB.Join();
+            threadC.Join();
+            threadD.Join();
+
             label1.Text = "- END OF THREAD -";
             Console.WriteLine(label1.Text.ToString());
 
